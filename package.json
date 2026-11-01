@@ -17,5 +17,18 @@
   "devDependencies": {
     "esbuild": "^0.25.0",
     "linkedom": "^0.18.14"
-  }
+  },
+  "packageManager": "pnpm@9.14.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xeubad/xeu-web-clipper.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "edge-extension",
+    "web-clipper",
+    "markdown",
+    "obsidian",
+    "readability"
+  ]
 }

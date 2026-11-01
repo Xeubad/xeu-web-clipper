@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>剪藏到博客</title>
+		<link rel="stylesheet" href="popup.css" />
+	</head>
+	<body>
+		<header>
+			<strong>剪藏到博客</strong>
+			<button id="openOptions" class="link" type="button">设置</button>
+		</header>
+
+		<div id="status" class="status">正在读取页面…</div>
+
+		<main>
+			<label>标题<input id="title" type="text" /></label>
+			<div class="row">
+				<label>作者<input id="author" type="text" /></label>
+				<label>日期<input id="published" type="text" /></label>
+			</div>
+			<label>描述<textarea id="description" rows="2"></textarea></label>
+			<label>标签（逗号分隔）<input id="tags" type="text" /></label>
+			<div class="target"><span id="targetPath"></span></div>
+
+			<details>
+				<summary>预览 Markdown</summary>
+				<textarea id="preview" readonly></textarea>
+			</details>
+		</main>
+
+		<footer>
+			<button id="save" class="primary" type="button">保存到 content</button>
+			<button id="download" type="button">下载 .md</button>
+		</footer>
+
+		<script src="popup.js"></script>
+	</body>
+</html>

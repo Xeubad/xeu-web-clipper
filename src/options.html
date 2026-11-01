@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<title>Xeu Article Clipper 设置</title>
+		<link rel="stylesheet" href="options.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Xeu Article Clipper</h1>
+			<p>把网页正文保存为 Markdown，直接写入 Obsidian vault（content/）。</p>
+		</header>
+
+		<section class="card">
+			<h2>保存目录</h2>
+			<p class="hint">选择一次 <code>content/</code> 目录；扩展会在其中按下面的路径模板创建子目录。</p>
+			<div class="row">
+				<button id="pickDir" class="primary" type="button">选择 content 目录</button>
+				<button id="clearDir" type="button">清除</button>
+			</div>
+			<div id="dirStatus" class="status">未选择目录</div>
+		</section>
+
+		<section class="card">
+			<h2>路径与文件名</h2>
+			<label>子目录模板
+				<input id="pathTemplate" type="text" placeholder="原始资料/文章" />
+			</label>
+			<label>文件名模板
+				<input id="filenameTemplate" type="text" placeholder="{{title}}" />
+			</label>
+			<div class="row">
+				<label>重名处理
+					<select id="conflict">
+						<option value="rename">自动加 -2</option>
+						<option value="overwrite">覆盖</option>
+						<option value="skip">跳过</option>
+					</select>
+				</label>
+				<label>提取方式
+					<select id="mode">
+						<option value="readability">正文（Readability）</option>
+						<option value="selection">选中内容</option>
+					</select>
+				</label>
+			</div>
+			<label>默认标签（逗号分隔）<input id="defaultTags" type="text" /></label>
+			<label class="check"><input id="sanitize" type="checkbox" /> 保存前脱敏（内网 IP / 密码 → x）</label>
+		</section>
+
+		<section class="card">
+			<h2>Frontmatter 模板</h2>
+			<p class="hint">可用变量见下方；<code>{{content}}</code> 是正文位置。</p>
+			<textarea id="template" rows="16" spellcheck="false"></textarea>
+			<div class="row">
+				<button id="resetTemplate" type="button">恢复默认模板</button>
+			</div>
+			<details>
+				<summary>变量列表</summary>
+				<pre>{{title}} {{title_yaml}}
+{{url}} {{url_yaml}}
+{{author}} {{author_yaml}}
+{{published}} {{published_yaml}}
+{{description}} {{description_yaml}}
+{{site}} {{site_yaml}} {{host}}
+{{date}} {{time}}
+{{tags}} {{tags_inline}}
+{{tags_yaml}}
+{{content}}</pre>
+				<p class="hint">带 <code>_yaml</code> 的变量会自动转义引号；默认模板使用它们。</p>
+			</details>
+		</section>
+
+		<footer>
+			<button id="save" class="primary" type="button">保存设置</button>
+			<span id="saveStatus" class="status"></span>
+		</footer>
+
+		<script src="options.js"></script>
+	</body>
+</html>

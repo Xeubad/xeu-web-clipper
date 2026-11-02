@@ -1,10 +1,15 @@
 {
 	"manifest_version": 3,
 	"name": "Xeu Article Clipper",
-	"version": "0.1.0",
-	"description": "把网页正文保存为 Markdown，直接写入 content/原始资料/文章",
+	"version": "0.1.1",
+	"description": "把网页正文保存为 Markdown，先写入 content/原始资料/收件箱 等 AI 提炼归档",
 	"minimum_chrome_version": "110",
-	"permissions": ["activeTab", "scripting", "storage", "downloads"],
+	"permissions": [
+		"activeTab",
+		"scripting",
+		"storage",
+		"downloads"
+	],
 	"action": {
 		"default_title": "剪藏到博客",
 		"default_popup": "popup.html",

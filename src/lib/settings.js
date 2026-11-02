@@ -1,7 +1,7 @@
 import { DEFAULT_TEMPLATE } from "./template.js";
 
 export const DEFAULTS = {
-	pathTemplate: "原始资料/文章",
+	pathTemplate: "原始资料/收件箱",
 	filenameTemplate: "{{title}}",
 	template: DEFAULT_TEMPLATE,
 	defaultTags: "clippings",

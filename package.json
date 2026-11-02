@@ -1,9 +1,9 @@
 {
   "name": "xeu-web-clipper",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
-  "description": "把网页正文剪藏为 Markdown，直接写入 content/原始资料/文章",
+  "description": "把网页正文剪藏为 Markdown，先写入 content/原始资料/收件箱 等 AI 提炼归档",
   "scripts": {
     "build": "node build.mjs",
     "watch": "node build.mjs --watch",
